@@ -167,6 +167,7 @@
             try {
                 if(!Tools.isNull(key,value)){
                   // “=” 也可 改为“>”，“<” 分别对应 等于、大于、小于对应的值
+                  //如果多条件查询where后面紧接着调用and 方法即可
                   return db.selector(entityType).where(key,"=",value).findAll();
                 }
             } catch (DbException e) {
